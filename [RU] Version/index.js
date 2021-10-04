@@ -1,9 +1,9 @@
-const Discord = require("discord.js"); //Lib's
-const client = new Discord.Client(); //Create client
-const config = require("./config.json"); //Load config file
+const Discord = require("discord.js"); //Библиотека
+const client = new Discord.Client(); //Создание клиента
+const config = require("./config.json"); //Загрузка конфига
 
 //===========================================================
-client.on('ready', () => { //Bot started
+client.on('ready', () => { //Бот запущен
     console.log(`✅ Запущен от имени бота: ${client.user.tag}!`)
 });
 //===========================================================
