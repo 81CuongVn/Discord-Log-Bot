@@ -39,3 +39,4 @@ Advantages:
  - [ ] Change attachmets log
  - [ ] Add multichannels
  - [ ] Add Language system
+ - [ ] Add channel filter
