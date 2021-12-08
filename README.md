@@ -34,3 +34,8 @@ Advantages:
  ```sh
  node index.js
  ```
+
+# TODO
+ - [ ] Change attachmets log
+ - [ ] Add multichannels
+ - [ ] Add Language system
