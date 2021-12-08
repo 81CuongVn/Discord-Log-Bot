@@ -40,3 +40,4 @@ Advantages:
  - [ ] Add multichannels
  - [ ] Add Language system
  - [ ] Add channel filter
+ - [ ] DJS 13
