@@ -16,7 +16,7 @@ client.on('ready', () => { //Бот запущен
 client.on('message', function(message) {
     if(message.author.bot) return; //Если автор сообщения бот, игнорируем
     
-    if(message.attachments.size > 0) { //Если сообщение с вложением
+    if(message.attachments.array().length !== 0) { //Если сообщение с вложением
         //Отправляем лог в канал логов
         sendLog(
             '✏️**[Сообщение с вложением отправлено]**✏️', 
@@ -41,7 +41,7 @@ client.on('message', function(message) {
 //Сообщение удалено
 client.on('messageDelete', function(message) {
     if(message.channel.type == 'text') {
-        if(message.attachments.size > 0) { //Если сообщение с вложением
+        if(message.attachments.array().length !== 0) { //Если сообщение с вложением
             //Отправляем лог в канал логов
             sendLog(
                 '🗑️**[Сообщение с вложением удалено]**🗑️', 
@@ -67,7 +67,7 @@ client.on('messageDelete', function(message) {
 //Сообщение изменено
 client.on('messageUpdate', function(oldMessage, newMessage) {
     if (newMessage.channel.type == 'text' && newMessage.cleanContent != oldMessage.cleanContent) {
-        if(newMessage.attachments.size > 0) { //Если сообщение с вложением
+        if(newMessage.attachments.array().length !== 0) { //Если сообщение с вложением
             //Отправляем лог в канал логов
             sendLog(
                 '📝**[Сообщение с вложением изменено]**📝', 
@@ -171,15 +171,16 @@ client.on('guildMemberRemove', function(member) {
 //Функции
 
 //Конструктор Embed с отправкой в канал логов
-function sendLog(title, color, description, image) {
+function sendLog(title, color, description, attachment) {
     //Конструктор Embed с логом
     const Embed = new Discord.MessageEmbed()
         .setColor(color)
         .setTitle(title)
-        .setDescription(description)
-        .setImage(image);
+        .setDescription(description);
 
-    return client.channels.cache.get(config.LOGCHANNEL).send(Embed); //Отправляем лог в канал логов
+    //Отправляем лог в канал логов
+    if(attachment == null) return client.channels.cache.get(config.LOGCHANNEL).send(Embed);
+    else return client.channels.cache.get(config.LOGCHANNEL).send({ embed: Embed, files: [attachment] });
 }
 
 //===========================================================

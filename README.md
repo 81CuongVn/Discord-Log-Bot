@@ -36,7 +36,7 @@ Advantages:
  ```
 
 # TODO
- - [ ] Change attachmets log
+ - [X] Change attachmets log
  - [ ] Add multichannels
  - [ ] Add Language system
  - [ ] Add channel filter
