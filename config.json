@@ -1,4 +1,6 @@
 {
     "BOT_TOKEN": "TOKEN",
-    "LOGCHANNEL": "CHANNEL_ID"
+    "LOGCHANNEL": [
+        "CHANNEL_ID"
+    ]
 }

@@ -18,7 +18,9 @@ Advantages:
  ```js
  {
     "BOT_TOKEN": "Enter_discord_bot_token",
-    "LOGCHANNEL": "Enter_channel_id"
+    "LOGCHANNEL": [
+       "Enter_channel_id"
+    ]
  }
  ```
  
@@ -37,7 +39,7 @@ Advantages:
 
 # TODO
  - [X] Change attachmets log
- - [ ] Add multichannels
+ - [X] Add multichannels
  - [ ] Add Language system
  - [ ] Add channel filter
  - [ ] DJS 13

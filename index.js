@@ -178,8 +178,12 @@ function sendLog(title, color, description, attachment) {
         .setDescription(description);
 
     //Sending a log to the log channel
-    if(attachment == null) return client.channels.cache.get(config.LOGCHANNEL).send(Embed);
-    else return client.channels.cache.get(config.LOGCHANNEL).send({ embed: Embed, files: [attachment] });
+    let logchannel = config.LOGCHANNEL
+    for(var i in logchannel) {
+        if(attachment == null) client.channels.cache.get(logchannel[i]).send(Embed);
+        else client.channels.cache.get(logchannel[i]).send({ embed: Embed, files: [attachment] });
+    }
+    return;
 }
 
 //===========================================================
